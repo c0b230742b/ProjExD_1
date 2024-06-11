@@ -17,7 +17,10 @@ def main():
     kk_rect.center = 300, 200
     tmr = 0
     width = 0
+    
     while True:
+        x = 0
+        y = 0
         width += 1
         for event in pg.event.get():
             if event.type == pg.QUIT: return
@@ -29,21 +32,23 @@ def main():
         screen.blit(bg_img2, [-width+4800, 0])
 
         key_lst = pg.key.get_pressed()
-
+        
+        
         if key_lst[pg.K_UP]:
-            kk_rect.move_ip(0, -1)
+            x , y =0 ,-1
         if key_lst[pg.K_DOWN]:
-            kk_rect.move_ip(0, 1)
+            x, y= 0, 1
         if key_lst[pg.K_RIGHT]:
-            kk_rect.move_ip(2, 0)
+            x, y=1, 0
         if key_lst[pg.K_LEFT]:
-            kk_rect.move_ip(-1, 0)
-        else:
-            kk_rect.move_ip(-1, 0)
+            x, y=-1, 0
+        kk_rect.move_ip(x, y)
         screen.blit(kk_img, kk_rect) #kk_imgをkk_rectの設定に従って貼り付け
         pg.display.update()
-        tmr += 1        
+        tmr += 1  
+       
         clock.tick(200)
+        
 
 
 if __name__ == "__main__":
