@@ -33,7 +33,7 @@ def main():
 
         key_lst = pg.key.get_pressed()
         
-        
+        x , y= -1, 0
         if key_lst[pg.K_UP]:
             x , y =0 ,-1
         if key_lst[pg.K_DOWN]:
@@ -42,6 +42,7 @@ def main():
             x, y=1, 0
         if key_lst[pg.K_LEFT]:
             x, y=-1, 0
+        
         kk_rect.move_ip(x, y)
         screen.blit(kk_img, kk_rect) #kk_imgをkk_rectの設定に従って貼り付け
         pg.display.update()
