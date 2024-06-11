@@ -38,7 +38,6 @@ def main():
             kk_rect.move_ip(1, 0)
         elif key_lst[pg.K_LEFT]:
             kk_rect.move_ip(-1, 0)
-    
         screen.blit(kk_img, kk_rect) #kk_imgをkk_rectの設定に従って貼り付け
         pg.display.update()
         tmr += 1        
