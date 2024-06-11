@@ -13,11 +13,14 @@ def main():
     kk_img = pg.image.load("fig/3.png")
     kk_img =pg.transform.flip(kk_img, True, False)
     tmr = 0
+    width = 0
     while True:
+        width += 1
         for event in pg.event.get():
             if event.type == pg.QUIT: return
+        width = tmr%800
 
-        screen.blit(bg_img, [0, 0])
+        screen.blit(bg_img, [-width, 0])
         kk_rect = kk_img.get_rect() #こうかとんRectの抽出
         kk_rect.center = 300, 200
         screen.blit(kk_img, kk_rect) #kk_imgをkk_rectの設定に従って貼り付け
